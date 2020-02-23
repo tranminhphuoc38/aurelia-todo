@@ -1,0 +1,7 @@
+<template>
+  <input type="checkbox" checked.bind="done">
+      <span css="text-decoration: ${done ? 'line-through' : 'none'}">
+        ${description}
+      </span>
+      <button click.trigger="remove()">Remove</button>
+</template>

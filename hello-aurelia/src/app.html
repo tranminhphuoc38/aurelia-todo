@@ -1,0 +1,11 @@
+<template>
+  <require from="./todo-list"></require>
+  <h1>${message}</h1>
+
+  <form submit.trigger="addTodo()">
+    <input type="text" ref="description">
+    <button type="submit" disabled.bind="!description">Add Todo</button>
+  </form>
+
+  <todo-list view-model.ref="list"></todo-list>
+</template>

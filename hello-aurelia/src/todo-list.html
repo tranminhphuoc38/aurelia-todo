@@ -1,0 +1,9 @@
+<template>
+  <require from="./todo-done.html"></require>
+  
+  <ul>
+    <li repeat.for="todo of todos">
+      <compose view-model.bind="todo" view="${todo.done  ? 'todo-done.html' : 'todo.html'}"></compose>
+    </li>
+  </ul>
+</template>
