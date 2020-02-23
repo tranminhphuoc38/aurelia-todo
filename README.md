@@ -3,4 +3,4 @@ Todo Application with Aurelia
 
 How to run:
 
-au run --opn
+au run --open
