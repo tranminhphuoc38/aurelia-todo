@@ -2,7 +2,7 @@
   <require from="./todo-done.html"></require>
   
   <ul>
-    <li repeat.for="todo of todos">
+    <li repeat.for="todo of todosView">
       <compose view-model.bind="todo" view="${todo.done  ? 'todo-done.html' : 'todo.html'}"></compose>
     </li>
   </ul>
