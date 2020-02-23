@@ -5,6 +5,7 @@ export class Todo {
   description: string;
   list: TodoList;
   @observable done;
+  editing: boolean = false;
 
   constructor(list: TodoList, description: string) {
     this.description = description;
