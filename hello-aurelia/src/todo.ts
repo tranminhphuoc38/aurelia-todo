@@ -1,17 +1,21 @@
+import { TodoList } from 'todo-list';
+import { observable } from 'aurelia-framework';
+
 export class Todo {
   description: string;
-  done: boolean;
-  list: Todo[];
+  list: TodoList;
+  @observable done;
 
-  constructor(list: Todo[], description: string) {
+  constructor(list: TodoList, description: string) {
     this.description = description;
     this.list = list;
   }
 
+  doneChanged() {
+    this.list.invalidateView();
+  }
+
   remove() {
-    let index = this.list.indexOf(this);
-    if (index !== -1) {
-      this.list.splice(index, 1);
-    }
+    this.list.remove(this);
   }
 }

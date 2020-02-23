@@ -26,12 +26,15 @@ export class TodoList {
 
   add(descriptionText) {
     if (descriptionText) {
-      this.todos.push(new Todo(this.todos, descriptionText));
+      this.todos.push(new Todo(this, descriptionText));
     }
   }
 
   remove(todo) {
-    todo.remove();
+    let index = this.todos.indexOf(todo);
+    if (index !== -1) {
+      this.todos.splice(index, 1);
+    }
   }
 
   filters = {
